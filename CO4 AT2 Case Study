@@ -1,0 +1,347 @@
+1. Library Management System
+Design a Java class to represent a library book.
+Data Members:
+• Book ID 
+• Book Title 
+• Author Name 
+• Number of Copies Available 
+Methods:
+1. Read book details. 
+2. Issue a book (decrease available copies by 1). 
+3. Return a book (increase available copies by 1). 
+4. Display updated book details. 
+Assume: Initial copies = 20.
+import java.util.Scanner;
+
+class Library {
+    int bookId, copies;
+    String title, author;
+
+    void readDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Book ID: ");
+        bookId = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Book Title: ");
+        title = sc.nextLine();
+
+        System.out.print("Enter Author Name: ");
+        author = sc.nextLine();
+
+        copies = 20;
+    }
+
+    void issueBook() {
+        if (copies > 0) {
+            copies--;
+            System.out.println("Book Issued Successfully");
+        }
+    }
+
+    void returnBook() {
+        copies++;
+        System.out.println("Book Returned Successfully");
+    }
+
+    void display() {
+        System.out.println("\nBook ID: " + bookId);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Available Copies: " + copies);
+    }
+
+    public static void main(String args[]) {
+        Library b = new Library();
+        b.readDetails();
+        b.issueBook();
+        b.returnBook();
+        b.display();
+    }
+}
+Output
+Enter Book ID: 101
+Enter Book Title: Java
+Enter Author Name: James Gosling
+Book Issued Successfully
+Book Returned Successfully
+
+Book ID: 101
+Title: Java
+Author: James Gosling
+Available Copies: 20
+2. Employee Salary Management
+Design a Java class to represent an employee.
+Data Members:
+• Employee ID 
+• Employee Name 
+• Department 
+• Basic Salary 
+Methods:
+1. Read employee details. 
+2. Calculate HRA (20% of Basic Salary). 
+3. Calculate DA (10% of Basic Salary). 
+4. Display gross salary. 
+Assume: Basic Salary = ₹25,000.
+import java.util.Scanner;
+
+class Employee {
+    int empId;
+    String name, dept;
+    double basic = 25000, hra, da, gross;
+
+    void readDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee ID: ");
+        empId = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Employee Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        dept = sc.nextLine();
+    }
+
+    void calculate() {
+        hra = basic * 0.20;
+        da = basic * 0.10;
+        gross = basic + hra + da;
+    }
+
+    void display() {
+        System.out.println("\nEmployee ID: " + empId);
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + dept);
+        System.out.println("Gross Salary: " + gross);
+    }
+
+    public static void main(String args[]) {
+        Employee e = new Employee();
+        e.readDetails();
+        e.calculate();
+        e.display();
+    }
+}
+Output
+Enter Employee ID: 1001
+Enter Employee Name: Ravi
+Enter Department: HR
+
+Employee ID: 1001
+Name: Ravi
+Department: HR
+Gross Salary: 32500.0
+3. Student Fee Management System
+Design a Java class to represent a student.
+Data Members:
+• Student ID 
+• Student Name 
+• Course 
+• Fee Balance 
+Methods:
+1. Read student details. 
+2. Pay fee amount. 
+3. Check remaining fee balance. 
+4. Display student details. 
+Assume: Total Course Fee = ₹50,000.
+import java.util.Scanner;
+
+class Student {
+    int id;
+    String name, course;
+    double balance = 50000;
+
+    void readDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student ID: ");
+        id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Student Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Course: ");
+        course = sc.nextLine();
+    }
+
+    void payFee() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Fee Amount: ");
+        double amt = sc.nextDouble();
+
+        balance -= amt;
+    }
+
+    void display() {
+        System.out.println("\nStudent ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Course: " + course);
+        System.out.println("Remaining Fee Balance: " + balance);
+    }
+
+    public static void main(String args[]) {
+        Student s = new Student();
+        s.readDetails();
+        s.payFee();
+        s.display();
+    }
+}
+Output
+Enter Student ID: 1
+Enter Student Name: Anu
+Enter Course: BCA
+Enter Fee Amount: 20000
+
+Student ID: 1
+Name: Anu
+Course: BCA
+Remaining Fee Balance: 30000.0
+4. Electricity Bill Management
+Design a Java class to represent a consumer.
+Data Members:
+• Consumer Number 
+• Consumer Name 
+• Type of Connection (Domestic/Commercial) 
+• Units Consumed 
+Methods:
+1. Read consumer details. 
+2. Calculate electricity bill. 
+3. Display bill amount. 
+4. Validate connection type. 
+Assume:
+• Domestic: ₹5 per unit 
+• Commercial: ₹8 per unit
+import java.util.Scanner;
+
+class Electricity {
+    int consumerNo, units;
+    String name, type;
+    double bill;
+
+    void readDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Consumer Number: ");
+        consumerNo = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Consumer Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Connection Type (Domestic/Commercial): ");
+        type = sc.nextLine();
+
+        System.out.print("Enter Units Consumed: ");
+        units = sc.nextInt();
+    }
+
+    void calculateBill() {
+        if (type.equalsIgnoreCase("Domestic"))
+            bill = units * 5;
+        else if (type.equalsIgnoreCase("Commercial"))
+            bill = units * 8;
+        else
+            System.out.println("Invalid Connection Type");
+    }
+
+    void display() {
+        System.out.println("\nConsumer Number: " + consumerNo);
+        System.out.println("Consumer Name: " + name);
+        System.out.println("Bill Amount: Rs." + bill);
+    }
+
+    public static void main(String args[]) {
+        Electricity e = new Electricity();
+        e.readDetails();
+        e.calculateBill();
+        e.display();
+    }
+}
+Output
+Enter Consumer Number: 101
+Enter Consumer Name: Kumar
+Enter Connection Type (Domestic/Commercial): Domestic
+Enter Units Consumed: 100
+
+Consumer Number: 101
+Consumer Name: Kumar
+Bill Amount: Rs.500.0
+5. Mobile Recharge System
+Design a Java class to represent a mobile subscriber.
+Data Members:
+• Mobile Number 
+• Subscriber Name 
+• Service Provider 
+• Account Balance 
+Methods:
+1. Read subscriber details. 
+2. Recharge account balance. 
+3. Deduct balance for a call/data usage. 
+4. Display updated balance. 
+Assume: Initial balance = ₹500.
+import java.util.Scanner;
+
+class MobileRecharge {
+    String mobileNo, name, provider;
+    double balance = 500;
+
+    void readDetails() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Mobile Number: ");
+        mobileNo = sc.nextLine();
+
+        System.out.print("Enter Subscriber Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Service Provider: ");
+        provider = sc.nextLine();
+    }
+
+    void recharge() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Recharge Amount: ");
+        double amt = sc.nextDouble();
+
+        balance += amt;
+    }
+
+    void deductBalance() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Usage Amount: ");
+        double use = sc.nextDouble();
+
+        balance -= use;
+    }
+
+    void display() {
+        System.out.println("\nMobile Number: " + mobileNo);
+        System.out.println("Subscriber Name: " + name);
+        System.out.println("Updated Balance: Rs." + balance);
+    }
+
+    public static void main(String args[]) {
+        MobileRecharge m = new MobileRecharge();
+        m.readDetails();
+        m.recharge();
+        m.deductBalance();
+        m.display();
+    }
+}
+Output
+Enter Mobile Number: 9876543210
+Enter Subscriber Name: Priya
+Enter Service Provider: Airtel
+Enter Recharge Amount: 200
+Enter Usage Amount: 50
+
+Mobile Number: 9876543210
+Subscriber Name: Priya
+Updated Balance: Rs.650.0
