@@ -1,0 +1,281 @@
+Level 2
+Question : Write a program to print the total amount available in the ATM machine with the c
+ onditions applied.
+ Total denominations are 2000, 500, 200, 100, get the denomination priority from t
+ he user and the total number of notes from the user to display the total availabl
+ e balance to the user
+ Sample Input:
+ Enter the 1st Denomination: 500
+ Enter the 1st Denomination number of notes: 4
+ Enter the 2nd Denomination: 100
+ Enter the 2nd Denomination number of notes: 20
+ Enter the 3rd Denomination: 200
+ Enter the 3rd Denomination number of notes: 32
+ Enter the 4th Denomination: 2000
+ Enter the 4th Denomination number of notes: 1
+ Sample Output:
+ Total Available Balance in ATM: 12400
+ 
+ Testcases:
+ Program : import java.util.Scanner;
+ class Atm
+ {
+ public static void main(String args[])
+ {
+ Scanner k=new Scanner(System.in);
+ int d=500,s=100,r=200,a=2000,e=4,q=4,w=32,y=1,t1,t2,t3,t4,total;
+ d*e=t1;
+ s*q=t2;
+ r*w=t3;
+ a*y=t4;
+ total=t1+t2+t3+t4;
+ System.out.println("total"+total);
+ }
+ }
+ 
+ Input : 500
+ 100
+ 200
+ 2000
+ 4
+ 20
+ 32
+ 1
+ Output : Error: Atm.java:8: error: unexpected type
+ d*e=t1;
+ ^
+ required: variable
+ found: value
+ Atm.java:9: error: unexpected type
+ s*q=t2;
+ ^
+ required: variable
+ found: value
+ Atm.java:10: error: unexpected type
+ r*w=t3;
+ ^
+ required: variable
+ found: value
+ Atm.java:11: error: unexpected type
+ a*y=t4;
+ ^
+ required: variable
+ found: value
+ 4 errors
+Question : Write a program to read a character until a * is encountered. Also count the numb
+ er of uppercase, lowercase, and numbers entered by the users.
+ Sample Input:
+ Enter * to exit 
+ Enter any character: W
+ Enter any character: d
+ Enter any character: A
+ Enter any character: G
+ Enter any character: g
+ Enter any character: H
+ Enter any character: *
+ Sample Output:
+ Total count of lower case:2
+ Total count of upper case:4
+ Total count of numbers =0
+ 
+ Testcases: 1. 1,7,6,9,5
+ 2. S, Q, l, K,7, j, M
+ 3. M, j, L, &, @, G
+ 4. D, K, I, 6, L, *
+ 5. *, K, A, e, 1, 8, %, *
+ Program : import java.io.*;
+ import java.util.*;
+ class Character
+ {
+ public static void main(String args[])
+ {
+ String str1,character;
+ int i,j;
+ character ch=character to.lowercase (str1.character a[i]);
+ for(i=0;i=’a’&& ch=’A’&&ch
+ Input : S E r h H
+ Output : Error: Character.java:9: error: ’;’ expected
+ character ch=character to.lowercase (str1.chAT[i]);
+ ^
+ 1 error
+ First Save: 2026-06-23 15:17:04
+ Last Save : 2026-06-23 16:27:18
+[3] QID: 42
+ Question : Write a program to print the first n perfect numbers. (Hint Perfect number means 
+ a positive integer that is equal to the sum of its proper divisors)
+ Sample Input:
+ N = 3
+ Sample Output:
+ First 3 perfect numbers are: 6 , 28 , 496
+ 
+ Testcases: 1. N = 0
+ 2. N = 5
+ 3. N = -2
+ 4. N = -5
+ 5. N = 0.2
+ Program : import java.io.*;
+ import java.util.*;
+ class Perfect
+ {
+Submitted Answers Report
+ public static void main(String args[])
+ {
+ int n=30,sum=0;
+ while(n>0){
+ int digit=n%10;
+ sum=sum*10+digit;
+ n=n/10;}
+ if(sum==n)
+ {
+ System.out.print("perfect");
+ }
+ else
+ {
+ System.out.print("not perfect");
+ }
+ }
+ }
+ Input : 30
+ Output : not perfect
+ First Save: 2026-06-23 15:01:57
+ Last Save : 2026-06-23 16:26:38
+ ----------------------------------------------------------------------------------------
+ [4] QID: 49
+ Question : Write a Program to Remove the Duplicate Items from a array.
+ Sample Input:
+ Enter the number of elements in array:7
+ Enter element1:10
+ Enter element2:20
+ Enter element3:20
+ Enter element4:30
+ Enter element5:40
+ Enter element6:40
+ Enter element7:50
+ Sample Output:
+ Non-duplicate items:
+ [10, 20, 30, 40, 50]
+ 
+ Testcases:
+ Program : import java.io.*;
+ import java.util.*;
+ class Remove
+ {
+ public static void main(String args[])
+ {
+ int arr[]={10,20,20,30},i,j;
+ for(i=0;i
+ Input : 10 20 20 30
+ Output : 20
+ 
+ First Save: 2026-06-23 14:46:38
+ Last Save : 2026-06-23 16:26:36
+Debugging
+[1] QID: 27
+ Question : A sorted array is printed incorrectly using a standard print statement. Identify 
+ the issue and correct the output display.
+ import java.util.Arrays;
+ 
+ public class Q27_Sort {
+ public static void main(String[] args) {
+ int arr[] = {3,1,2};
+ Arrays.sort(arr);
+ System.out.println(Arrays.toString(arr));
+ }
+ }
+ 
+ Program : import java.io.*;
+ import java.util.*;
+ class Sort
+ {
+ public static void main(String args[])
+ {
+ int arr[]={3,1,2};
+ Arrays.sort(arr);
+ System.out.println(Arrays.toString(arr));
+ }
+ }
+ Input : (no input)
+ Output : [1, 2, 3]
+ 
+ First Save: 2026-06-23 14:00:01
+ Last Save : 2026-06-23 14:09:32
+ ----------------------------------------------------------------------------------------
+ [2] QID: 21
+ Question : A string replace operation does not change the original string. Identify the issu
+ e and correct it.
+ public class Q21_Replace {
+Submitted Answers Report
+ public static void main(String[] args) {
+ String str = "Java";
+ str = str.replace("a", "o");
+ System.out.println(str);
+ }
+ }
+ 
+ Program : import java.io.*;
+ import java.util.*;
+ class Replace
+ {
+ public static void main(String args[])
+ {
+ String str="java";
+ str=str.replace("a","o");
+ System.out.println(str);
+ }
+ }
+ Input : (no input)
+ Output : jovo
+ 
+ First Save: 2026-06-23 13:56:10
+ Last Save : 2026-06-23 14:09:34
+ ----------------------------------------------------------------------------------------
+ [3] QID: 17
+ Question : A loop attempts to access characters beyond the string length, causing an excepti
+ on. Fix the boundary condition.
+ public class Q17_Boundary {
+ public static void main(String[] args) {
+ String str = "Java";
+ for(int i=0;i
+ Program : import java.io.*;
+ import java.util.*;
+ class Boundary
+ {
+ public static void main(String args[])
+ {
+ String str="java";
+ for(int i=0;i
+ Input : (no input)
+ Output : java
+ java
+ java
+ java
+ 
+ First Save: 2026-06-23 13:35:34
+ Last Save : 2026-06-23 14:09:38
+ ----------------------------------------------------------------------------------------
+ [4] QID: 16
+ Question : A program attempts to access an array using a negative index, causing an error. I
+ dentify and correct the problem.
+Submitted Answers Report
+ public class Q16_Index {
+ public static void main(String[] args) {
+ int arr[] = {10,20,30};
+ System.out.println(arr[0]);
+ }
+ }
+ 
+ Program : import java.io.*;
+ import java.util.*;
+ class Index
+ {
+ public static void main(String args[])
+ {
+ int arr[]={10,20,30};
+ System.out.println(arr[0]);
+ }
+ }
+ Input : 10 20 30
+ Output : 10
+ 
+ First Save: 2026-06-23 13:30:01
+ Last Save : 2026-06-23 14:09:36
